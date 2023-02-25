@@ -4,5 +4,6 @@ import PointControlHistoricController from './app/controllers/PointControlHistor
 const router = Router();
 
 router.get('/point-control-historic/:employeeId', PointControlHistoricController.index);
+router.post('/point-control-historic', PointControlHistoricController.store);
 
 export default router;
