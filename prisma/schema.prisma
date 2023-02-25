@@ -9,3 +9,20 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Employee {
+  id            String @id @default(uuid())
+  name          String
+  employee_code String @unique
+
+  employee_point_control_history EmployeePointControlHistory[]
+}
+
+model EmployeePointControlHistory {
+  id           String   @id @default(uuid())
+  employeeId   String
+  day_worked   DateTime
+  worked_hours DateTime
+
+  employee Employee @relation(fields: [employeeId], references: [id])
+}
