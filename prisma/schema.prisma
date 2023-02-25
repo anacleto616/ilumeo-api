@@ -22,7 +22,7 @@ model EmployeePointControlHistory {
   id           String   @id @default(uuid())
   employeeId   String
   day_worked   DateTime
-  worked_hours DateTime
+  worked_hours Int
 
   employee Employee @relation(fields: [employeeId], references: [id])
 }
