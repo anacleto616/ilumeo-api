@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import PointControlHistoricsRepository from '../repositories/PointControlHistoricsRepository';
 import { PointControlHistoricType } from '../types/PointControlHistoricType';
+import toHoursAndMinutes from '../utils/toHoursAndMinutes';
 
 class PointControlHistoricController {
   public async index(request: Request, response: Response): Promise<void> {
@@ -8,7 +9,13 @@ class PointControlHistoricController {
 
     const pointControlHistoric = await PointControlHistoricsRepository.findAllById(employeeId);
 
-    response.json(pointControlHistoric);
+    const pointControlHistoricFormatted = pointControlHistoric.map((pointControl) => ({
+      ...pointControl,
+      day_worked: new Intl.DateTimeFormat('pt-BR').format(pointControl.day_worked),
+      worked_hours: toHoursAndMinutes(pointControl.worked_hours)
+    }));
+
+    response.json(pointControlHistoricFormatted);
   }
 
   public async store(request: Request, response: Response): Promise<void> {
