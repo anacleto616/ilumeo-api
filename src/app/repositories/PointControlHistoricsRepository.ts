@@ -4,7 +4,7 @@ import { PointControlHistoricType } from '../types/PointControlHistoricType';
 const prisma = new PrismaClient();
 
 class PointControlHistoricsRepository {
-  public async findAllById(employeeId: string): Promise<PointControlHistoricType[]> {
+  public async findAllEmployeeById(employeeId: string): Promise<PointControlHistoricType[]> {
     const rows = await prisma.employeePointControlHistory.findMany({
       where: { employeeId },
       orderBy: { day_worked: 'desc' }

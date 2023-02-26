@@ -7,7 +7,7 @@ class PointControlHistoricController {
   public async index(request: Request, response: Response): Promise<void> {
     const { employeeId } = request.params;
 
-    const pointControlHistoric = await PointControlHistoricsRepository.findAllById(employeeId);
+    const pointControlHistoric = await PointControlHistoricsRepository.findAllEmployeeById(employeeId);
 
     const pointControlHistoricFormatted = pointControlHistoric.map((pointControl) => ({
       ...pointControl,
