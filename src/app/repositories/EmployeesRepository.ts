@@ -1,7 +1,5 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../libraries/prisma';
 import { EmployeeType } from '../types/EmployeeType';
-
-const prisma = new PrismaClient();
 
 class EmployeesRepository {
   async findAll(): Promise<EmployeeType[]> {

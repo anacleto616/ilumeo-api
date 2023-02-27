@@ -1,7 +1,5 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../libraries/prisma';
 import { PointControlHistoricType } from '../types/PointControlHistoricType';
-
-const prisma = new PrismaClient();
 
 class PointControlHistoricsRepository {
   public async findAllEmployeeById(employeeId: string): Promise<PointControlHistoricType[]> {
