@@ -1,4 +1,4 @@
-import toHoursAndMinutes from "./toHoursAndMinutes";
+import toHoursAndMinutes from './toHoursAndMinutes';
 
 describe('To hours and minutes', () => {
   it('should be possible to convert minutes to hours and return a formatted string', () => {
