@@ -15,8 +15,16 @@ app.use(
     response: Response,
     next: NextFunction
   ) => {
-    console.log(error);
-    response.sendStatus(500);
+    if (error instanceof Error) {
+      return response.status(400).json({
+        message: error.message
+      });
+    }
+
+    return response.sendStatus(500).json({
+      status: 'error',
+      message: `Internal server error - ${error}`
+    });
   }
 );
 
