@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch ./src/index.ts",
-    "start": "tsx dist/app.js",
+    "start": "tsx dist/index.js",
     "build": "tsc -p .",
+    "build:deploy": "npm install && npm run build",
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "test": "jest"
