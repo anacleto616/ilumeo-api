@@ -4,7 +4,7 @@
   "description": "employee point control",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch ./src/server.ts",
+    "dev": "tsx watch ./src/index.ts",
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "test": "jest"
