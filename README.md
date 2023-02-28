@@ -24,6 +24,6 @@
 - Digite o comando: `npx prisma db seed`, para fazer o seed do banco de dados
 - Execute a aplicação com o comando: `npm run dev`, estará rodando no endereço: `http://localhost:3333`
 
-## Deploy
+## 📤️ Deploy
   - Deploy da aplicação feito na plataforma render, hospedado no link: https://ilumeo-api-pl35.onrender.com
   - Banco de dados também hospedado na plataforma render
